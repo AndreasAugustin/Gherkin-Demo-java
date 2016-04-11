@@ -48,8 +48,8 @@ public class Soundex {
     }
 
     public String encode(final String word) {
-        return zeroPad(upperFront(head(word))
-                + tail(encodedDigits(word)));
+        return zeroPad(replaceNotADigit(upperFront(head(word))
+                + tail(encodedDigits(word))));
     }
 
     public String encodedDigit(char letter) {
@@ -84,6 +84,18 @@ public class Soundex {
     private StringBuilder encodeHead(final String word) {
 
         return new StringBuilder(encodedDigit(word.charAt(0)));
+    }
+
+    private String replaceNotADigit(final String input) {
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < input.length(); i++) {
+            Character current = input.charAt(i);
+            if (!Objects.equals(current, NOT_A_DIGIT.charAt(0))) {
+                builder.append(current);
+            }
+        }
+
+        return builder.toString();
     }
 
     private StringBuilder encodeTail(StringBuilder encoding, final String word) {

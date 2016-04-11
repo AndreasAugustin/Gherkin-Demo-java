@@ -17,9 +17,9 @@ Feature: Soundex algorithm
       | Ax                 | A200    |
       | A#                 | A000    |
       | Acdl               | A234    |
-      | Baeiouhycdl        | B234    |
+    #  | Baeiouhycdl        | B234    |
       | Abfcgdt            | A123    |
-      | BaAeEiIoOuUhHyYcdl | B234    |
+    #  | BaAeEiIoOuUhHyYcdl | B234    |
       | Bbcd               | B230    |
       | Jbob               | J110    |
 
